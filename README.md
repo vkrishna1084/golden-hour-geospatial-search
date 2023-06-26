@@ -26,16 +26,13 @@ The LLM chain code that calls the LLM with the input from the user.
 
 ## Deploying to AWS
 
-###Prerequisites
+### Prerequisites
 1. nodejs 18+
 2. Python 3.9+
 3. aws-cdk toolkit (npm install -g aws-cdk)
 4. AWS account configured with credentials (https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_prerequisites)
 5. openai and pinecone api key saved in Secrets Manager in your AWS Account
-6. Expected secret name is api-keys
-	openai key is expected to be stored with openai-api-key key
-	pinecone key is expected to be stored with pinecone-api-key key
-7. conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
+6. conda (https://conda.io/projects/conda/en/latest/user-guide/install/index.html)
 
 Clone the repository
 ```bash
