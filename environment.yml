@@ -1,0 +1,12 @@
+name: langchain-aws-service
+channels:
+  - https://conda.anaconda.org/conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - aws-cdk-lib
+    - langchain==0.0.126
+    - boto3
+    - requests
+    - streamlit
