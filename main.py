@@ -23,7 +23,8 @@ def handler(event, context):
     print(f"session_id is {session_id}")
     
     response, session_id = chain.run(
-        api_key=get_api_key(), 
+        openai_api_key=get_api_key('openai_api_key'), 
+        pinecone_api_key=get_api_key('pinecone_api_key'),
         session_id=session_id, 
         prompt=prompt
     )
@@ -53,7 +54,7 @@ def build_response(body: Dict):
     }
 
 
-def get_api_key():
+def get_api_key(key_str):
     """Fetches the api keys saved in Secrets Manager"""
 
     headers = {"X-Aws-Parameters-Secrets-Token": os.environ.get('AWS_SESSION_TOKEN')}
@@ -64,4 +65,4 @@ def get_api_key():
     r = requests.get(secrets_extension_endpoint, headers=headers)
     secret = json.loads(json.loads(r.text)["SecretString"])
 
-    return secret["openai-api-key"]
+    return secret["key_str"]

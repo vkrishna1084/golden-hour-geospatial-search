@@ -1,6 +1,21 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
 from apps import home, xy  # import your app modules here
+import api
+
+# Check if the user ID is already stored in the session state
+if 'user_id' in st.session_state:
+    user_id = st.session_state['user_id']
+    print(f"User ID: {user_id}")
+
+# If the user ID is not yet stored in the session state, generate a random UUID
+else:
+    user_id = str(uuid.uuid4())
+    st.session_state['user_id'] = user_id
+
+
+if 'session_id' not in st.session_state:
+    st.session_state['session_id'] = ""
 
 if 'input' not in st.session_state:
     st.session_state.input = ''
