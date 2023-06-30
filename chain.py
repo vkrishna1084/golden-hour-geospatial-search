@@ -77,8 +77,8 @@ def run(openai_api_key: str, pinecone_api_key: str, session_id: str, qry: str) -
         The prediction from LLM
     """
     #Setting Pinecone environment variables
-    pinecone_api_env = ''
-    pinecone_index = ''
+    pinecone_api_env = 'us-west1-gcp-free'
+    pinecone_index = 'satellite-image-search'
     
     if not session_id:
         session_id = str(uuid4())
